@@ -4,6 +4,8 @@ import '../src/css/_SocialCard.scss';
 
 function App() {
 
+  let randomColor = '';
+
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -29,8 +31,9 @@ function App() {
     <div className="App">
       {
         users.map((user, index) => {
+          randomColor = Math.floor(Math.random() * 16777215).toString(16);
           return (
-            <SocialCard user={user} key={index} />
+            <SocialCard randomColor={randomColor} user={user} key={index} />
           )
         })
       }
