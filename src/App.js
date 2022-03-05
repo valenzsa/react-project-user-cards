@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import SocialCard from './components/SocialCard';
 import './App.css';
 
 function App() {
@@ -8,26 +9,31 @@ function App() {
   useEffect(() => {
     (
       async () => {
-        let userData;
-
+        let usersData;
         try {
           const response = await fetch('https://random-data-api.com/api/users/random_user?size=3');
-          userData = await response.json();
-          console.log(userData);
+          usersData = await response.json();
+          console.log(usersData);
         }
         catch (error) {
           console.log(error);
-          userData = [];
+          usersData = [];
         }
 
-        setUsers(userData);
+        setUsers(usersData);
       }
     )();
   }, []);
 
   return (
     <div className="App">
-
+      {
+        users.map((user, index) => {
+          return (
+            <SocialCard user={user} key={index} />
+          )
+        })
+      }
     </div>
   );
 }
