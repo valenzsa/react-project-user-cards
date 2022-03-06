@@ -12,7 +12,14 @@
     .card__title {
         font-weight: 800;
         font-size: 1.5rem;
-        
+        background: #ffffff;
+        opacity: .8;
+        border-radius: 3px;
+        h1 {
+            font-size: 1.3rem;
+            opacity: 1;
+            padding: 5px;
+        }
     }
     .card__body {
         display: flex;
