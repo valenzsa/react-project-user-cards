@@ -13,7 +13,7 @@ function SocialCard({ user, randomColor }) {
         // <div className="card" style={{ backgroundColor: `#${randomColor}` }}>
         <div className="card" style={bgColor}>
             <div className="card__title">
-                <h1>{user.first_name} {user.last_name}</h1>
+                <h2>{user.first_name} {user.last_name}</h2>
             </div>
             <div className="card__body">
                 <Address address={user.address} />

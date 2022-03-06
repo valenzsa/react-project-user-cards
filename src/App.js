@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import SearchBar from './components/SearchBar';
 import SocialCard from './components/SocialCard';
 import './App.scss';
 
@@ -7,6 +8,7 @@ function App() {
   let randomColor = '';
 
   const [users, setUsers] = useState([]);
+  const [allUsers, setAllUsers] = useState([]);
 
   useEffect(() => {
     (
@@ -21,7 +23,7 @@ function App() {
           console.log(error);
           usersData = [];
         }
-
+        setAllUsers(usersData);
         setUsers(usersData);
       }
     )();
@@ -29,6 +31,8 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Robo Cards</h1>
+      <SearchBar allUsers={allUsers} setUsers={setUsers} />
       <div className="card-container">
         {
           users.map((user, index) => {
