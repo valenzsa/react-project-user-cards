@@ -9,7 +9,16 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
+  background: #eee;
+}
+
+.card-container {
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* Component Styles */
-@import "_SocialCard";
+@import "./css/SocialCard";
+@import "./css/Address";

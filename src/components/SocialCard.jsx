@@ -1,10 +1,13 @@
+import Address from './Address';
+import PhoneNumber from './PhoneNumber';
 
 function SocialCard({ user, randomColor }) {
     console.log(user);
     console.log(randomColor);
 
     const bgColor = {
-        backgroundColor: `#${randomColor}`
+        backgroundColor: `#${randomColor}`,
+        backgroundImage: `linear-gradient(to bottom right, #ffffff, #${randomColor})`
     }
     return (
         // <div className="card" style={{ backgroundColor: `#${randomColor}` }}>
@@ -13,6 +16,8 @@ function SocialCard({ user, randomColor }) {
                 <h1>{user.first_name} {user.last_name}</h1>
             </div>
             <div className="card__body">
+                <Address address={user.address} />
+                <PhoneNumber phone={user.phone_number} />
                 <div className="card__image">
                     <img src={user.avatar} alt={`${user.first_name} ${user.last_name}`} />
                 </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import SocialCard from './components/SocialCard';
-import '../src/css/_SocialCard.scss';
+import './App.scss';
 
 function App() {
 
@@ -34,9 +34,7 @@ function App() {
           users.map((user, index) => {
             randomColor = Math.floor(Math.random() * 16777215).toString(16);
             return (
-
               <SocialCard randomColor={randomColor} user={user} key={index} />
-
             )
           })
         }
