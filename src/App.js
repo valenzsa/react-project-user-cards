@@ -15,7 +15,7 @@ function App() {
       async () => {
         let usersData;
         try {
-          const response = await fetch('https://random-data-api.com/api/users/random_user?size=10');
+          const response = await fetch('https://random-data-api.com/api/users/random_user?size=50');
           usersData = await response.json();
           console.log(usersData);
         }
