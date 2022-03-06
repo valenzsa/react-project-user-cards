@@ -1,9 +1,9 @@
-function SearchBar({ allUsers, setUsers }) {
+function SearchBar({ allUsers, setUsers, setIsSearchResultEmpty }) {
 
     function filterCards(e) {
-        console.log(e.target.value);
+        //console.log(e.target.value);
         const value = e.target.value.toLowerCase();  // Use toLowerCase() in case of uppercase/lowercase mismatches
-        console.log(value);
+        //console.log(value);
 
         const filteredUsers = allUsers.filter(
             user => (`${user.first_name} ${user.last_name}`
@@ -11,8 +11,14 @@ function SearchBar({ allUsers, setUsers }) {
                 .includes(value)
             )
         );
-        console.log(filteredUsers);
         setUsers(filteredUsers);
+
+        // Check if search result is empty or not
+        if (filteredUsers.length > 0) {
+            setIsSearchResultEmpty(false);
+        } else {
+            setIsSearchResultEmpty(true);
+        }
     }
 
 

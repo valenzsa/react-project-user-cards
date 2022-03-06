@@ -2,8 +2,8 @@ import Address from './Address';
 import PhoneNumber from './PhoneNumber';
 
 function SocialCard({ user, randomColor }) {
-    console.log(user);
-    console.log(randomColor);
+    //console.log(user);
+    //console.log(randomColor);
 
     const bgColor = {
         backgroundColor: `#${randomColor}`,
